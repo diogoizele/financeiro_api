@@ -29,6 +29,8 @@ CREATE TABLE purchase (
     item VARCHAR(512) NOT NULL,
     price NUMERIC(10, 2) NOT NULL,
     description TEXT,
+    link TEXT,
+    image TEXT,
 
     person_id BIGINT NOT NULL
 );
