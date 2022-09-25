@@ -29,7 +29,7 @@ public class SecurityConfig {
 
                 .and()
                     .authorizeRequests()
-                        .antMatchers(POST, "/users").permitAll()
+                        .antMatchers(POST, "/auth/**").permitAll()
 
                 .and()
                     .authorizeRequests()
