@@ -1,5 +1,6 @@
 package br.com.financeiro.controller.response.activity;
 
+import br.com.financeiro.model.ActivityStatus;
 import br.com.financeiro.model.Category;
 import lombok.*;
 
@@ -17,4 +18,5 @@ public class GetActivityResponse {
         private Category category;
         private BigDecimal amount;
         private String description;
+        private ActivityStatus status;
 }
