@@ -13,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static br.com.financeiro.mapper.activity.CreateActivityMapper.toEntity;
 import static br.com.financeiro.mapper.activity.CreateActivityMapper.toResponse;
+import static br.com.financeiro.model.ActivityStatus.PENDING;
+import static br.com.financeiro.model.Category.EXPENSE;
 
 @Service
 public class CreateActivityService {
@@ -35,6 +37,10 @@ public class CreateActivityService {
 
         Activity activity = toEntity(request);
         activity.setUser(user);
+
+        if (activity.getCategory().equals(EXPENSE)) {
+            activity.setStatus(PENDING);
+        }
 
         activityRepository.save(activity);
 
