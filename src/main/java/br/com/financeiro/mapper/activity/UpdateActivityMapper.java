@@ -11,6 +11,7 @@ public class UpdateActivityMapper {
                 .title(entity.getTitle())
                 .date(entity.getDate())
                 .amount(entity.getAmount())
+                .status(entity.getStatus())
                 .build();
     }
 }

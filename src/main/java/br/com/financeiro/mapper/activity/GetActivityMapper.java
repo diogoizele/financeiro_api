@@ -12,6 +12,7 @@ public class GetActivityMapper {
                 .category(entity.getCategory())
                 .date(entity.getDate())
                 .description(entity.getDescription())
+                .status(entity.getStatus())
                 .build();
     }
 }

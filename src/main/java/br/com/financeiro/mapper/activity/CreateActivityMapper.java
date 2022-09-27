@@ -16,12 +16,13 @@ public class CreateActivityMapper {
                 .build();
     }
 
-    public static BasicActivityResponse toResponse(Activity activity) {
+    public static BasicActivityResponse toResponse(Activity entity) {
         return BasicActivityResponse.builder()
-                .id(activity.getId())
-                .title(activity.getTitle())
-                .date(activity.getDate())
-                .amount(activity.getAmount())
+                .id(entity.getId())
+                .title(entity.getTitle())
+                .date(entity.getDate())
+                .amount(entity.getAmount())
+                .status(entity.getStatus())
                 .build();
     }
 }
