@@ -10,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import static java.util.Objects.isNull;
+
 @Service
 public class GetActivitiesService {
 
@@ -21,6 +23,11 @@ public class GetActivitiesService {
 
     public Page<GetActivityResponse> getActivitiesByCategory(Category category, Pageable pageable) {
         Long userId = userAuthenticatedService.getId();
+
+        if (isNull(category)) {
+            return activityRepository.findAllByUserId(userId, pageable)
+                    .map(GetActivityMapper::toResponse);
+        }
 
         return activityRepository.findAllByUserIdAndCategory(userId, category, pageable)
                 .map(GetActivityMapper::toResponse);
