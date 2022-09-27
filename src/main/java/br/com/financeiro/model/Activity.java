@@ -31,6 +31,9 @@ public class Activity {
     @Enumerated(STRING)
     private  Category category;
 
+    @Enumerated(STRING)
+    private ActivityStatus status;
+
     @ManyToOne
     @JoinColumn(name = "person_id")
     private User user;
